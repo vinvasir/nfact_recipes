@@ -4,5 +4,5 @@ Django==1.11.6
 djangorestframework==3.7.1
 gunicorn==19.7.1
 pytz==2017.3
-recipe-scraper==1.0.1
+-e git://github.com/hhursev/recipe-scraper.git@f15784b144e1b161020809a1d55f16b083b427fb
 whitenoise==3.3.1
