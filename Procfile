@@ -1,1 +1,1 @@
-web: gunicorn server.wsgi --log-file -
+web: gunicorn nfact_recipes.wsgi --log-file -
