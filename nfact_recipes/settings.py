@@ -31,12 +31,6 @@ ALLOWED_HOSTS = ['nfact-recipes.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
     'rest_framework',
     'recipe_scrapers',
     'core',
