@@ -1,1 +1,1 @@
-web: gunicorn nfact_recipes/wsgi.py --log-file -
+web: python3 manage.py runserver
