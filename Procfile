@@ -1,1 +1,1 @@
-web: gunicorn py_mrp.wsgi --log-file -
+web: gunicorn nfact_recipes/wsgi.py --log-file -
