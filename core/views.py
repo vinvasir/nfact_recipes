@@ -12,8 +12,21 @@ def index(request):
   scraped = scrape_me('http://allrecipes.com/Recipe/Apple-Cake-Iv/Detail.aspx')
 
   title = scraped.title()
-  # scrape_me.total_time()
-  # scrape_me.ingredients()
-  # scrape_me.instructions()
+  time = scraped.total_time()
+  ingredients = scraped.ingredients()
+  instructions = scraped.instructions()
 
   return Response({"message": "Hello, world!", "recipe title": title})
+
+@api_view()
+def allrecipes(request, slug):
+  endpoint = 'http://allrecipes.com/Recipe/' + slug + '/Detail.aspx'
+
+  scraped = scrape_me(endpoint)
+
+  title = scraped.title()
+  time = scraped.total_time()
+  ingredients = scraped.ingredients()
+  instructions = scraped.instructions()
+
+  return Response({"Recipe": {"title": title, "time": time, "ingredients": ingredients, "instructions": instructions}})
