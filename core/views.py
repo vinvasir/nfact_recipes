@@ -37,5 +37,5 @@ def allrecipes(request, slug):
       "time": time, 
       "ingredients": ingredients, 
       "instructions": instructions
-      }, 'auth': request.auth,
+      }
     })
