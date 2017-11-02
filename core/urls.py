@@ -7,4 +7,5 @@ urlpatterns = [
   url(r'^$', views.index, name='index'),
   url(r'^allrecipes/(?P<slug>[\w-]+)/$', views.allrecipes),
   url(r'^bbcgoodfood/(?P<slug>[\w-]+)/$', views.bbcgoodfood),
+  url(r'^twopeasandtheirpod/(?P<slug>[\w-]+)/$', views.twopeasandtheirpod)
 ]
