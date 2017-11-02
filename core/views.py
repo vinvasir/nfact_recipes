@@ -7,6 +7,8 @@ from rest_framework.permissions import IsAuthenticated
 
 from recipe_scrapers import scrape_me
 
+from .recipe_serializer import RecipeSerializer
+
 # Create your views here.
 @api_view()
 def index(request):
@@ -26,16 +28,10 @@ def allrecipes(request, slug):
 
   scraped = scrape_me(endpoint)
 
-  title = scraped.title()
-  time = scraped.total_time()
-  ingredients = scraped.ingredients()
-  instructions = scraped.instructions()
-
   return Response(
-    {"Recipe": {
-      "title": title, 
-      "time": time, 
-      "ingredients": ingredients, 
-      "instructions": instructions
-      }
-    })
+    {"Recipe": RecipeSerializer(scraped).to_json()})
+
+@api_view()
+@permission_classes((IsAuthenticated,))
+def bbcgoodfood(request, slug):
+  return Response({"message": "Good food route works!", "slug": slug})

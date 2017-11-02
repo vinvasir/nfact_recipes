@@ -25,7 +25,7 @@ SECRET_KEY = 'lu$g35w5x@9f15g_@$4ef6jea3d8^xmb517!m73y^6ys7--fi&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nfact-recipes.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'nfact-recipes.herokuapp.com']
 
 
 # Application definition
