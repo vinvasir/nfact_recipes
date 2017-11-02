@@ -26,12 +26,12 @@ def index(request):
 def allrecipes(request, slug):
   endpoint = 'http://allrecipes.com/Recipe/' + slug + '/Detail.aspx'
 
-  scraped = scrape_me(endpoint)
-
   return Response(
-    {"Recipe": RecipeSerializer(scraped).to_json()})
+    {"recipe": RecipeSerializer(scrape_me(endpoint)).to_json()})
 
 @api_view()
 @permission_classes((IsAuthenticated,))
 def bbcgoodfood(request, slug):
-  return Response({"message": "Good food route works!", "slug": slug})
+  endpoint = 'https://www.bbcgoodfood.com/recipes/' + slug
+
+  return Response({"recipe": RecipeSerializer(scrape_me(endpoint)).to_json()})
