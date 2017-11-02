@@ -37,7 +37,7 @@ def bbcgoodfood(request, slug):
   return Response({"recipe": RecipeSerializer(scrape_me(endpoint)).to_json()})
 
 @api_view()
-# @permission_classes((IsAuthenticated,))
+@permission_classes((IsAuthenticated,))
 def twopeasandtheirpod(request, slug):
   endpoint = 'https://www.twopeasandtheirpod.com/' + slug
 
